@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>About Us | Inlighn Tech</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+       .gradient-background {
+  background:linear-gradient(300deg, #2c6e56, #aee967, #0a8fc8);
+  background-size: 180% 180%;
+  animation: gradient-animation 10s ease infinite;
+}
+
+
+      @keyframes gradient-animation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .contact-section {
+        background: #012A36;
+        color: #ffffff;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+      }
+
+      .contact-section input,
+      .contact-section textarea {
+        border: none;
+        background: #f9f9f9;
+        color: #333;
+      }
+
+      .contact-section input::placeholder,
+      .contact-section textarea::placeholder {
+        color: #777;
+      }
+      /* Default Light Mode */
+body.light-mode {
+  background-color: #410000;
+  color: #000000;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #0a192f;
+  color: #ffffff;
+}
+
+body.dark-mode .card,
+body.dark-mode .navbar,
+body.dark-mode .footer,
+body.dark-mode .form-control {
+  background-color: #112240;
+  color: white;
+  border-color: #1f2937;
+}
+
+body.dark-mode .btn {
+  background-color: #233554;
+  color: white;
+}
+
+body.dark-mode a {
+  color: #38bdf8;
+}
+.about-premium-section {
+  background: linear-gradient(to right, #f0fff0, #e6fff6);
+  padding: 5rem 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.premium-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.glass-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.glass-card h4 {
+  font-size: 1.3rem;
+  color: #064635;
+  margin-bottom: 0.5rem;
+}
+
+.glass-card p {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.journey-timeline {
+  margin-top: 5rem;
+}
+
+.timeline-roadmap {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.timeline-roadmap li {
+  position: relative;
+  padding: 1rem 0 1rem 2.5rem;
+  border-left: 2px dashed #064635;
+  margin-bottom: 1rem;
+  color: #222;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+}
+
+.timeline-roadmap li span {
+  position: absolute;
+  left: -1.3rem;
+  top: 0.8rem;
+  font-size: 1.2rem;
+  background: #064635;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 50%;
+}
+
+.flip-card {
+  background: transparent;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 270px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  border-radius: 20px;
+  backface-visibility: hidden;
+}
+
+.flip-card-front img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.flip-card-front h4 {
+  font-size: 1.2rem;
+  color: #064635;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #222;
+  font-size: 0.95rem;
+}
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+.flip-card-front img {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.flip-card-front h3 {
+  color: #064635;
+  font-weight: bold;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.3);
+  color: #000;
+  text-align: center;
+}
+
+
+    </style>
+  </head>
+  <body>
+     <!-- 🔄 Loader Screen -->
+    
+
+ <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+      <div class="container">
+        <a class="navbar-brand text-success fw-bold" href="#"><img src="https://www.inlighntech.com/wp-content/uploads/2025/04/inlighn-tech-logo.png" class="mb-3" width="60">Inlighn Tech</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link active" href="programs.html">Programs</a></li>
+              <li class="nav-item"><a class="nav-link " href="verify.html">Verify Certificate</a></li>
+              <li class="nav-item"><a class="nav-link" href="whats-special.html">What’s Special</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+             
+                <li><button id="theme-toggle" class="btn btn-outline-light ms-3">
+  <i class="bi bi-moon-stars-fill" id="theme-icon"></i>
+</button></li> 
+              <a class="btn btn-success btn-sm ms-2" href="login.html">Login</a>
+            </li>
+         
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<section class="programs-section" style="font-family: 'Inter', sans-serif; background: linear-gradient(145deg, #f0f2f5, #e0e0e0); padding: 4rem 1rem;">
+  <h2 style="text-align: center; font-size: 2.8rem; color: #111; margin-bottom: 3rem;">🚀 Enroll in Inlighn Tech Programs</h2>
+
+  <div class="programs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; max-width: 1200px; margin: auto;">
+    
+    <!-- Program Card Template -->
+    <div class="program-card gradient-background" style="border-radius: 20px; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.08); text-align: center; transition: all 0.3s;">
+      <img src="https://cdn-icons-png.flaticon.com/512/2721/2721294.png" alt="Full Stack Icon" width="60" style="margin-bottom: 1rem;">
+      <h3>Full Stack Development</h3>
+      <p style="color: #555;">HTML, CSS, JS, Node.js, MongoDB</p>
+      <p><strong>₹999</strong></p>
+      <button type="button" class="btn btn-warning" data-course="Full Stack Development" data-price="999">Add to Cart</button>
+    </div>
+
+    <div class="program-card gradient-background">
+      <img src="https://cdn-icons-png.flaticon.com/512/3081/3081648.png" alt="Cybersecurity Icon" width="60" style="margin-bottom: 1rem;">
+      <h3>Cybersecurity</h3>
+      <p style="color: #555;">Protect systems, networks & apps</p>
+      <p><strong>₹879</strong></p>
+      <button type="button" class="btn btn-warning"  data-course="Cybersecurity" data-price="879">Add to Cart</button>
+    </div>
+
+    <div class="program-card gradient-background">
+      <img src="https://cdn-icons-png.flaticon.com/512/3784/3784184.png" alt="Data Science Icon" width="60" style="margin-bottom: 1rem;">
+      <h3>Data Science</h3>
+      <p style="color: #555;">ML, pandas, visualization, NLP</p>
+      <p><strong>₹1099</strong></p>
+      <button type="button" class="btn btn-warning"  data-course="Data Science" data-price="1099">Add to Cart</button>
+    </div>
+
+    <div class="program-card gradient-background">
+      <img src="https://cdn-icons-png.flaticon.com/512/5351/5351313.png" alt="Data Analysis Icon" width="60" style="margin-bottom: 1rem;">
+      <h3>Data Analysis</h3>
+      <p style="color: #555;">Turn raw data into insights</p>
+      <p><strong>₹849</strong></p>
+      <button type="button" class="btn btn-warning"  data-course="Data Analysis" data-price="849">Add to Cart</button>
+    </div>
+
+    <div class="program-card gradient-background">
+      <img src="https://cdn-icons-png.flaticon.com/512/2721/2721263.png" alt="AI & ML Icon" width="60" style="margin-bottom: 1rem;">
+      <h3>AI & Machine Learning</h3>
+      <p style="color: #555;">Neural nets, TensorFlow & models</p>
+      <p><strong>₹1199</strong></p>
+      <button type="button" class="btn btn-warning"  data-course="AI & Machine Learning" data-price="1199">Add to Cart</button>
+    </div>
+
+    <div class="program-card gradient-background">
+      <img src="https://cdn-icons-png.flaticon.com/512/1048/1048943.png" alt="UI/UX Icon" width="60" style="margin-bottom: 1rem;">
+      <h3>UI/UX Design</h3>
+      <p style="color: #555;">Figma, design systems & prototyping</p>
+      <p><strong>₹749</strong></p>
+      <button type="button" class="btn btn-warning"  data-course="UI/UX Design" data-price="749">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- 🧾 Cart Section -->
+  <div style="max-width: 800px; margin: 4rem auto 0; background: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);">
+    <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #0f0f0f;">🛒 Your Cart</h3>
+    <ul id="cart-items" style="list-style: none; padding-left: 0; font-size: 1rem; color: #333;"></ul>
+    <hr />
+    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem;">
+      <span>Total:</span>
+      <strong id="total-price">₹0</strong>
+    </div>
+    <div style="margin-top: 2rem; text-align: right;">
+      <a id="gpay-link" href="#" target="_blank">
+        <button style="padding: 12px 28px; background-color: #0077ff; color: white; font-size: 1rem; border: none; border-radius: 8px; cursor: pointer;">
+          Pay with GPay
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
+<section id="neer-chatbot" style="background-color: #f5f5f5; padding: 40px 20px;">
+  <h2 style="text-align: center; color: #004d40; font-family: 'Inter', sans-serif; margin-bottom: 20px;">
+    Ask Neer — Your Green Tech Buddy 🌱
+  </h2>
+  <div style="text-align: center; margin-bottom: 20px;">
+    <button onclick="toggleChatbot()" style="padding: 10px 20px; background-color: #009688; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Toggle Chat Assistant
+    </button>
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <iframe
+      id="chatbotIframe"
+      src="https://www.stack-ai.com/chat/685404c96fe56826c33f1570-0Ka7RmamCUP8cFvQdxYPDy"
+      width="70%"
+      height="500px"
+      frameborder="0"
+      style="display: none; border-radius: 10px; border: 2px solid #7eef05; box-shadow: 0 0 30px 10px rgba(182, 222, 8, 0.6);">
+    </iframe>
+  </div>
+</section>
+
+<script>
+  function toggleChatbot() {
+    const iframe = document.getElementById('chatbotIframe');
+    iframe.style.display = (iframe.style.display === 'none') ? 'block' : 'none';
+  }
+</script>
+
+ <!-- CONTACT FORM SECTION -->
+<section class="contact-section py-5 bg-dark text-white" id="contact">
+  <div class="container">
+    <h2 class="text-center mb-4 display-6 fw-semibold">Fill the form to contact us</h2>
+    <form id="contactForm" class="row g-4">
+      <div class="col-md-6">
+        <input type="text" class="form-control rounded-3 p-3" placeholder="Full Name" required>
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control rounded-3 p-3" placeholder="Email" required>
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control rounded-3 p-3" placeholder="Domain of Internship" required>
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control rounded-3 p-3" placeholder="State" required>
+      </div>
+      <div class="col-12">
+        <textarea class="form-control rounded-3 p-3" rows="4" placeholder="Message" required></textarea>
+      </div>
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-warning px-5 py-2 fw-semibold">Submit</button>
+      </div>
+    </form>
+  </div>
+</section>
+<section></section><section></section>
+
+ <!-- Footer -->
+ <footer class="text-white position-relative" style="background-color: #022c2f;">
+  
+
+  <div class="container py-5">
+    <div class="row text-center text-md-start">
+      <div class="col-md-3 mb-4">
+        <img src="https://www.inlighntech.com/wp-content/uploads/2025/04/inlighn-tech-logo.png" alt="Logo" width="120" class="mb-3">
+        <p  data-aos="fade-up">At INLIGHN TECH, we believe the future of education lies in bridging the gap between academic learning and industry needs.</p>
+      </div>
+
+      <div class="col-md-3 mb-4"  data-aos="fade-down">
+        <h5 class="text-warning" >Menu</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="about.html" class="text-white text-decoration-none">About Us</a></li>
+          <li><a href="programs.html" class="text-white text-decoration-none">Programs</a></li>
+          <li><a href="contact.html" class="text-white text-decoration-none">Contact Us</a></li>
+          <li><a href="login.html" class="text-white text-decoration-none">Login to Portal</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 mb-4"  data-aos="fade-up">
+        <h5 class="text-warning">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Terms & Conditions</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Disclaimer</a></li>
+          <li><a href="#" class="text-white text-decoration-none">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-3 mb-4"  data-aos="fade-down">
+        <h5 class="text-warning">Follow Us</h5>
+        <div class="mb-3">
+          <a href="#" class="text-white me-2"><i class="bi bi-linkedin fs-4"></i></a>
+          <a href="#" class="text-white me-2"><i class="bi bi-instagram fs-4"></i></a>
+          <a href="#" class="text-white"><i class="bi bi-youtube fs-4"></i></a>
+        </div>
+        <p><i class="bi bi-geo-alt-fill me-2"></i>WeWork, 36 Infantry Rd, Bengaluru</p>
+        <p><i class="bi bi-telephone-fill me-2"></i>+91 9368842663</p>
+        <p><i class="bi bi-envelope-fill me-2"></i>info@inlighntech.com</p>
+      </div>
+    </div>
+
+    <hr class="border-light" />
+   
+  </div>
+
+  <!-- WhatsApp & Back to Top -->
+  <a href="https://wa.me/919368842663" target="_blank" class="whatsapp-btn" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp"></i></a>
+  <a href="#" class="back-to-top"><i class="bi bi-chevron-up"></i></a>
+</footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true
+      });
+    </script>
+
+    <!-- ✅ WhatsApp Chat Floating -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">
+      <i class="fab fa-whatsapp"></i></a>
+    </div>
+    <script src="./script.js" defer></script>
+   <script>
+  const toggleBtn = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
+  const body = document.body;
+
+  // Load stored preference
+  const storedTheme = localStorage.getItem("theme");
+  if (storedTheme === "dark") {
+    body.classList.add("dark-mode");
+    themeIcon.classList.replace("bi-moon-stars-fill", "bi-sun-fill");
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+      themeIcon.classList.replace("bi-moon-stars-fill", "bi-sun-fill");
+      localStorage.setItem("theme", "dark");
+    } else {
+      themeIcon.classList.replace("bi-sun-fill", "bi-moon-stars-fill");
+      localStorage.setItem("theme", "light");
+    }
+  });
+
+ 
+
+</script>
+<script>
+  const cartItems = document.getElementById("cart-items");
+  const totalPriceEl = document.getElementById("total-price");
+  const gpayLink = document.getElementById("gpay-link");
+
+  let total = 0;
+  let selectedCourses = [];
+
+  document.querySelectorAll(".add-to-cart").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const course = btn.getAttribute("data-course");
+      const price = parseInt(btn.getAttribute("data-price"));
+
+      selectedCourses.push({ course, price });
+      const li = document.createElement("li");
+      li.textContent = `${course} - ₹${price}`;
+      cartItems.appendChild(li);
+
+      total += price;
+      totalPriceEl.textContent = `₹${total}`;
+
+      // Simulated GPay Redirect (for now just a generic link with note)
+      gpayLink.href = `https://pay.google.com/gp/w/u/0/home?amount=${total}`;
+    });
+  });
+</script>
+
+  </body>
+</html>
+
+   
+ 
